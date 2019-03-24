@@ -148,6 +148,7 @@
 		75F74E4A1F4383F90054231C /* PGPDSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F74E451F4382FF0054231C /* PGPDSA.m */; };
 		75FA4A4020A791F200A453EC /* PGPElgamal.h in Headers */ = {isa = PBXBuildFile; fileRef = 75FA4A3E20A791F200A453EC /* PGPElgamal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		75FA4A4120A791F200A453EC /* PGPElgamal.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FA4A3F20A791F200A453EC /* PGPElgamal.m */; };
+		FCEF22FC22478BAB001BDC79 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF22FB22478BAB001BDC79 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -315,6 +316,7 @@
 		75F74E451F4382FF0054231C /* PGPDSA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGPDSA.m; sourceTree = "<group>"; };
 		75FA4A3E20A791F200A453EC /* PGPElgamal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGPElgamal.h; sourceTree = "<group>"; };
 		75FA4A3F20A791F200A453EC /* PGPElgamal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGPElgamal.m; sourceTree = "<group>"; };
+		FCEF22FB22478BAB001BDC79 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +443,7 @@
 		756299AC1914DE1A00C5AD3B = {
 			isa = PBXGroup;
 			children = (
+				FCEF22FB22478BAB001BDC79 /* Package.swift */,
 				758475E1195AF866003953B2 /* README.md */,
 				75F6BAAD1F8AF28100A0B885 /* LICENSE.txt */,
 				75BAFAC31F004E6000A956FC /* Config */,
@@ -723,6 +726,7 @@
 				TargetAttributes = {
 					750F89331F0D6A3F00B99726 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -818,6 +822,7 @@
 				750F895C1F0D6EF100B99726 /* PGPPartialSubKey.m in Sources */,
 				75BF43E31F504D0F004334DE /* PGPKeyGenerator.m in Sources */,
 				751373F11F65382C0067A343 /* NSMutableData+PGPUtils.m in Sources */,
+				FCEF22FC22478BAB001BDC79 /* Package.swift in Sources */,
 				75C501E71F1233A500FEC874 /* PGPRSA.m in Sources */,
 				756BCC90208A837F001A8EC6 /* PGPMarkerPacket.m in Sources */,
 				75FA4A4120A791F200A453EC /* PGPElgamal.m in Sources */,
@@ -882,7 +887,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 75BAFAC61F0050A000A956FC /* Defaults-Debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -891,6 +898,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.krzyzanowskim.$(PRODUCT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -900,7 +909,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 75BAFAC51F0050A000A956FC /* Defaults-Release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -909,6 +920,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.krzyzanowskim.$(PRODUCT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -932,6 +944,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 750676C01F005B2F00066408 /* Defaults-Testing.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectivePGP/ObjectivePGP-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -954,6 +967,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 750676C01F005B2F00066408 /* Defaults-Testing.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectivePGP/ObjectivePGP-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
