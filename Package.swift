@@ -23,8 +23,5 @@ let package = Package(
             dependencies: [],
             path: "."
         )
-        .testTarget(
-            name: "ObjectivePGPTests",
-            dependencies: ["ObjectivePGP"]),
     ]
 )
